@@ -29,9 +29,10 @@ public class HystrixRequestCommand extends HystrixCommand<MuleEvent> {
 		try {
 			response = processor.process(event);
 		} catch (MuleException e) {
-			throw new RuntimeException(e.getMessage());
+			throw new RuntimeException(e);
 		}
 
 		return response;
 	}
+
 }
