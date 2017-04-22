@@ -23,9 +23,9 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 	<flow name="hystrix-testFlow">
 		<http:listener config-ref="HTTP_Listener_Configuration"
 			path="/" doc:name="HTTP" />
-		<flow-ref name="hystrix-testFlow1" doc:name="hystrix-testFlow1" />
+		<flow-ref name="Hystrix-flow" doc:name="Hystrix-flow" />
 	</flow>
-	<flow name="hystrix-testFlow1" processingStrategy="Custom_Processing_Strategy">
+	<flow name="Hystrix-flow" processingStrategy="Custom_Processing_Strategy">
 		<http:request config-ref="HTTP_Request_Configuration"
 			path="/" method="GET" followRedirects="false" parseResponse="false"
 			doc:name="HTTP" />
