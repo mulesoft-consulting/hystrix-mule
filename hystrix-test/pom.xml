@@ -14,6 +14,7 @@
 
 		<mule.version>3.8.4</mule.version>
 		<mule.tools.version>1.2</mule.tools.version>
+		<hystrix.version>1.5.11</hystrix.version>
 	</properties>
 
 	<build>
@@ -133,12 +134,12 @@
 		<dependency>
 			<groupId>com.netflix.hystrix</groupId>
 			<artifactId>hystrix-core</artifactId>
-			<version>1.5.11</version>
+			<version>${hystrix.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.hystrix</groupId>
 			<artifactId>hystrix-metrics-event-stream-jaxrs</artifactId>
-			<version>1.5.11</version>
+			<version>${hystrix.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.modules</groupId>
@@ -167,6 +168,24 @@
     <dependency>
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-jersey</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>com.mulesoft.weave</groupId>
+            <artifactId>mule-plugin-weave</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-schedulers</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-udp</artifactId>
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>

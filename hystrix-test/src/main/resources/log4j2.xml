@@ -43,8 +43,10 @@
         <AsyncLogger name="org.jetel" level="WARN"/>
         <AsyncLogger name="Tracking" level="WARN"/>
         
+        <!-- This is to shut down all the Broken Pipe errors that come from half baked streaming response that needs proper HTTP2 support -->
+        <AsyncLogger name="org.mule.module.http.internal.listener.grizzly" level="NONE"/>
         
-        <AsyncLogger name="com.netflix.hystrix" level="DEBUG"/>
+        <AsyncLogger name="com.netflix.hystrix" level="INFO"/>
         
         <AsyncRoot level="INFO">
             <AppenderRef ref="file" />
