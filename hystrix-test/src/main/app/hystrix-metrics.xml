@@ -18,7 +18,7 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
 http://www.mulesoft.org/schema/mule/jetty http://www.mulesoft.org/schema/mule/jetty/current/mule-jetty.xsd">
 	<flow name="hystrix-metricsMainFlow" processingStrategy="synchronous">
 		<http:listener config-ref="HTTP_Listener_Configuration"
-			path="/hystrix/*" doc:name="HTTP" responseStreamingMode="ALWAYS"/>
+			path="/hystrix/*" doc:name="HTTP" />
 		<jersey:resources doc:name="Hystrix metrics JAXRS app">
 			<component
 				class="com.netflix.hystrix.contrib.metrics.controller.HystrixConfigSseController" />

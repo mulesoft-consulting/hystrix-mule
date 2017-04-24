@@ -14,31 +14,54 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 		host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration" />
 	<http:request-config name="HTTP_Request_Configuration"
 		host="google.com" port="80" doc:name="HTTP Request Configuration" />
-	<custom-processing-strategy name="Custom_Processing_Strategy"
+	<custom-processing-strategy name="Custom_Processing_Strategy1"
 		class="org.mule.hystrix.processing.HystrixProcessingStrategy"
 		doc:name="Custom Processing Strategy">
 		<spring:property name="hystrixCommandGroupKey" value="${hystrix.command.group.key}" />
-		<spring:property name="hystrixCommandKey" value="${hystrix.command.key}" />
+		<spring:property name="hystrixCommandKey" value="${hystrix.command.key1}" />
 	</custom-processing-strategy>
+		<custom-processing-strategy name="Custom_Processing_Strategy2"
+		class="org.mule.hystrix.processing.HystrixProcessingStrategy"
+		doc:name="Custom Processing Strategy">
+		<spring:property name="hystrixCommandGroupKey" value="${hystrix.command.group.key}" />
+		<spring:property name="hystrixCommandKey" value="${hystrix.command.key2}" />
+	</custom-processing-strategy>
+	
 	<flow name="hystrix-testFlow">
 		<http:listener config-ref="HTTP_Listener_Configuration"
 			path="/" doc:name="HTTP" />
-		<flow-ref name="Hystrix-flow" doc:name="Hystrix-flow" />
+		<flow-ref name="Hystrix-flow1" doc:name="Hystrix-flow1" />
+		<flow-ref name="Hystrix-flow2" doc:name="Hystrix-flow2" />
 	</flow>
-	<flow name="Hystrix-flow" processingStrategy="Custom_Processing_Strategy">
+	<flow name="Hystrix-flow1" processingStrategy="Custom_Processing_Strategy1">
 		<http:request config-ref="HTTP_Request_Configuration"
 			path="/" method="GET" followRedirects="false" parseResponse="false"
 			doc:name="HTTP" />
-        <exception-strategy ref="Choice" doc:name="Reference Exception Strategy"/>
+		<exception-strategy ref="Choice"
+			doc:name="Reference Exception Strategy" />
 	</flow>
-    <choice-exception-strategy name="Choice">
-        <catch-exception-strategy when="#[exception.causedBy(com.netflix.hystrix.exception.HystrixRuntimeException) &amp;&amp; exception.cause.cause.toString() == &quot;java.util.concurrent.TimeoutException&quot;]" enableNotifications="false" doc:name="Timeout">
-            <set-payload value="{&quot;result&quot;: &quot;timeout&quot;}" doc:name="Set Payload"/>
-            <set-property propertyName="http.result" value="200" doc:name="Property"/>
-        </catch-exception-strategy>
-        <catch-exception-strategy enableNotifications="false" doc:name="Other error">
-            <set-payload value="{&quot;result&quot;: &quot;something else&quot;}" doc:name="Set Payload"/>
-            <set-property propertyName="http.result" value="200" doc:name="Property"/>
-        </catch-exception-strategy>
-    </choice-exception-strategy>
+	<flow name="Hystrix-flow2" processingStrategy="Custom_Processing_Strategy2">
+		<http:request config-ref="HTTP_Request_Configuration"
+			path="/" method="GET" followRedirects="false" parseResponse="false"
+			doc:name="Copy_of_HTTP" />
+		<exception-strategy ref="Choice"
+			doc:name="Copy_of_Reference Exception Strategy" />
+	</flow>
+	<choice-exception-strategy name="Choice">
+		<catch-exception-strategy
+			when="#[exception.causedBy(com.netflix.hystrix.exception.HystrixRuntimeException) &amp;&amp; exception.cause.cause.toString() == &quot;java.util.concurrent.TimeoutException&quot;]"
+			enableNotifications="false" doc:name="Timeout">
+			<set-payload value="{&quot;result&quot;: &quot;timeout&quot;}"
+				doc:name="Set Payload" />
+			<set-property propertyName="http.result" value="200"
+				doc:name="Property" />
+		</catch-exception-strategy>
+		<catch-exception-strategy
+			enableNotifications="false" doc:name="Other error">
+			<set-payload value="{&quot;result&quot;: &quot;something else&quot;}"
+				doc:name="Set Payload" />
+			<set-property propertyName="http.result" value="200"
+				doc:name="Property" />
+		</catch-exception-strategy>
+	</choice-exception-strategy>
 </mule>
