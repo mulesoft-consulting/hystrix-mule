@@ -6,6 +6,12 @@ Mule integration with Netflix Hystrix to be used for client thread control and i
 - Netflix Hystrix
 
 ## Installation
+Requires Java and Maven
+```
+git clone https://github.com/mulesoft-consulting/hystrix-mule
+cd hystrix-mule/mule-hystrix
+mvn clean install
+```
 
 ## Using in Mule
 ### How it works
