@@ -2,11 +2,12 @@
 Mule integration with Netflix Hystrix to be used for client thread control and implementation of a Circuit Breaker pattern.
 
 ## Overview
-- Circuit Breaker Pattern
-- Netflix Hystrix
+
+- (Circuit Breaker Pattern[https://martinfowler.com/bliki/CircuitBreaker.html])
+- (Netflix Hystrix[https://github.com/Netflix/Hystrix/wiki])
 
 ## Installation
-Requires Java and Maven
+Requires Git, Java and Maven
 ```
 git clone https://github.com/mulesoft-consulting/hystrix-mule
 cd hystrix-mule/mule-hystrix
