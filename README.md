@@ -101,7 +101,7 @@ Processors to be wired with Hystrix-managed connection pools, need to be placed 
 This is useful in scenarios, like deploying to CloudHub, where it is desired to reuse the existing HTTP configuration. Hystrix dashboard connection will be exposed on the same HTTP endpoint.
 
 ### Configuring Mule dashboard connector
-When deploying into CloudHub, the number of ports to connect to the Mule engine is limited and the same HTTP connector object can be reused to expose the end point to connect to Hystrix dashboards. Additional flow can expose JAX-RS based implementation to serve statistics using the same HTTP connector object. ___Note:___ Current implementation reverses the connection to effectively polling due to the lack of support for `text/event-stream` responses.
+When deploying into CloudHub, the number of ports to connect to the Mule engine is limited and the same HTTP connector object can be reused to expose the end point to connect to [Hystrix dashboards](https://github.com/Netflix/Hystrix/wiki/Dashboard). Additional flow can expose JAX-RS based implementation to serve statistics using the same HTTP connector object. ___Note:___ Current implementation reverses the connection to effectively polling due to the lack of support for `text/event-stream` responses.
 
 ### Mule flow example
 ```xml
