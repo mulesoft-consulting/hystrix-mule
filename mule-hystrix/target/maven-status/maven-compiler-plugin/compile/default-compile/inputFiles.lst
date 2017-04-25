@@ -1,4 +1,0 @@
-/Users/michaelhyatt/git-hystrix-mule/mule-hystrix/src/main/java/org/mule/hystrix/processing/HystrixRequestCommand.java
-/Users/michaelhyatt/git-hystrix-mule/mule-hystrix/src/main/java/org/mule/hystrix/processing/HystrixHttpRequester.java
-/Users/michaelhyatt/git-hystrix-mule/mule-hystrix/src/main/java/org/mule/hystrix/jersey/writers/HystrixStreamingOutputProvider.java
-/Users/michaelhyatt/git-hystrix-mule/mule-hystrix/src/main/java/org/mule/hystrix/processing/HystrixProcessingStrategy.java
