@@ -16,6 +16,15 @@ mvn clean install
 ## Using in Mule
 ### How it works
 
+### pom.xml
+```xml
+<dependency>
+	<groupId>com.mulesoft.consulting</groupId>
+	<artifactId>mule-hystrix</artifactId>
+	<version>LATEST</version>
+</dependency>
+```
+
 ### Configuring HTTP receiver with custom connection strategy
 
 ### Mule flow example
