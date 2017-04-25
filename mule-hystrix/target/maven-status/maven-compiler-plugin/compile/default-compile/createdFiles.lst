@@ -1,0 +1,5 @@
+org/mule/hystrix/processing/HystrixProcessingStrategy.class
+org/mule/hystrix/jersey/writers/HystrixStreamingOutputProvider$1.class
+org/mule/hystrix/jersey/writers/HystrixStreamingOutputProvider.class
+org/mule/hystrix/processing/HystrixHttpRequester.class
+org/mule/hystrix/processing/HystrixRequestCommand.class
