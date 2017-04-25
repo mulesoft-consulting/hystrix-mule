@@ -1,5 +1,7 @@
 .settings
+
 target/maven-status/
 target/maven-archiver/
 target/classes/
 target/test-classes/
+
