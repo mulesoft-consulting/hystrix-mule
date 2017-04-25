@@ -176,7 +176,7 @@
 		<dependency>
 			<groupId>com.mulesoft.consulting</groupId>
 			<artifactId>mule-hystrix</artifactId>
-			<version>1.0.0</version>
+			<version>LATEST</version>
 		</dependency>
 	</dependencies>
 
