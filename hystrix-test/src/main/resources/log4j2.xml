@@ -43,7 +43,8 @@
         <AsyncLogger name="org.jetel" level="WARN"/>
         <AsyncLogger name="Tracking" level="WARN"/>
         
-        <!-- This is to shut down all the Broken Pipe errors that come from half baked streaming response that needs proper HTTP2 support -->
+        <!-- This is to shut down all the Broken Pipe errors that come from JAX-RS streaming response 
+        shoehorned into HTTP1.1 Mule receiver. Needs proper HTTP2 support to be solved -->
         <AsyncLogger name="org.mule.module.http.internal.listener.grizzly" level="NONE"/>
         
         <AsyncLogger name="com.netflix.hystrix" level="INFO"/>

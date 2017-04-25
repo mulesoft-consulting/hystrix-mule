@@ -14,6 +14,9 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 		host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration" />
 	<http:request-config name="HTTP_Request_Configuration"
 		host="google.com" port="80" doc:name="HTTP Request Configuration" />
+		
+		<!-- If custom processing strategies are using the same keys, 
+		it will appear as a single Hystrix component  -->
 	<custom-processing-strategy name="Custom_Processing_Strategy1"
 		class="org.mule.hystrix.processing.HystrixProcessingStrategy"
 		doc:name="Custom Processing Strategy">
@@ -33,6 +36,8 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 		<flow-ref name="Hystrix-flow1" doc:name="Hystrix-flow1" />
 		<flow-ref name="Hystrix-flow2" doc:name="Hystrix-flow2" />
 	</flow>
+	
+	<!-- Activities in these flows are performed using Hystrix thread pool -->
 	<flow name="Hystrix-flow1" processingStrategy="Custom_Processing_Strategy1">
 		<http:request config-ref="HTTP_Request_Configuration"
 			path="/" method="GET" followRedirects="false" parseResponse="false"
@@ -47,6 +52,9 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 		<exception-strategy ref="Choice"
 			doc:name="Copy_of_Reference Exception Strategy" />
 	</flow>
+	
+	<!-- Exceptions thrown in flows are wrapped in com.netflix.hystrix.exception.HystrixRuntimeException
+	Refer to Hystrix Wiki for more info -->
 	<choice-exception-strategy name="Choice">
 		<catch-exception-strategy
 			when="#[exception.causedBy(com.netflix.hystrix.exception.HystrixRuntimeException) &amp;&amp; exception.cause.cause.toString() == &quot;java.util.concurrent.TimeoutException&quot;]"

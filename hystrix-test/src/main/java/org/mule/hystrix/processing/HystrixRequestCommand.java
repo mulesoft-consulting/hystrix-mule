@@ -8,6 +8,10 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
 
+/*
+ * Hystrix command wrapping the original processor process() method.
+ */
+
 public class HystrixRequestCommand extends HystrixCommand<MuleEvent> {
 
 	private MessageProcessor processor;

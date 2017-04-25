@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 
-import org.apache.log4j.Logger;
 import org.mule.api.MuleContext;
 import org.mule.api.MuleEvent;
 import org.mule.api.MuleException;
@@ -18,9 +17,12 @@ import org.mule.module.http.internal.request.DefaultHttpRequesterConfig;
 import org.mule.module.http.internal.request.HttpRequesterRequestBuilder;
 import org.mule.module.http.internal.request.ResponseValidator;
 
-public class HystrixHttpRequester extends DefaultHttpRequester {
+/*
+ * Adapter for DefaultHttpRequester wrapping the process() method in a Hystrix command and 
+ * delegating other methods to the default implementation.
+ */
 
-	Logger log = Logger.getLogger(HystrixHttpRequester.class.getName());
+public class HystrixHttpRequester extends DefaultHttpRequester {
 
 	private DefaultHttpRequester processor;
 	private String hystrixCommandGroupKey;
@@ -34,6 +36,7 @@ public class HystrixHttpRequester extends DefaultHttpRequester {
 
 	@Override
 	public MuleEvent process(MuleEvent event) throws MuleException {
+		// Injection of Hystrix sync call wrapping the original process() method.
 		return new HystrixRequestCommand(processor, event, hystrixCommandGroupKey, hystrixCommandKey).execute();
 	}
 

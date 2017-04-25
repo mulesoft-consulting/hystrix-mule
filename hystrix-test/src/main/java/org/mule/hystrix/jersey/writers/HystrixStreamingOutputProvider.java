@@ -77,14 +77,17 @@ public class HystrixStreamingOutputProvider implements MessageBodyWriter<Hystrix
 
 			while (moreDataWillBeSent.get()) {
 
+				/* This is where we are hacking steam response designed to work with HTTP2 to respond only once
+				 * to work with Mule HTTP1.1 receiver. This effectively reverses the streaming push into polling.
+				 * We are also using a local stream to avoid different threads writing into the same MuleMessage.
+				 * */
 				if (localEntity.toString().length() > 0) {
-					String payload = localEntity.toString();
-					entity.write(payload.getBytes());
+
+					entity.write(localEntity.toString().getBytes());
 					entity.flush();
+
 					localEntity.flush();
 
-					localEntity.close();
-					entity.close();
 					moreDataWillBeSent.set(false);
 				}
 
@@ -95,7 +98,10 @@ public class HystrixStreamingOutputProvider implements MessageBodyWriter<Hystrix
 				}
 			}
 		} finally {
-
+			
+			entity.close();
+			localEntity.close();
+			
 			hystrixStream.getConcurrentConnections().decrementAndGet();
 			if (sampleSubscription != null && !sampleSubscription.isUnsubscribed()) {
 				sampleSubscription.unsubscribe();
