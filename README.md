@@ -32,6 +32,7 @@ The implementation allows running Mule processors using Hystrix managed thread p
 Processors to be wired with Hystrix-managed connection pools, need to be placed into their own flows and invoked using `flow-ref`. These separate flows need to be wired with custom processing strategy `org.mule.hystrix.processing.HystrixProcessingStrategy`. The strategy needs to be initialised using 2 properties: `hystrixCommandKey` and `hystrixCommandGroupKey` and can also be controlled through [Hystrix properties](https://github.com/Netflix/Hystrix/wiki/Configuration) added to the property files. Note, that exceptions are thrown wrapped in `com.netflix.hystrix.exception.HystrixRuntimeException` and require further unpicking to determine the rootcause. The fallBack procedures are implemented through Mule exception handling and can allow custom configuration of fallBack responses for timeouts, bad requests, errors, etc.
 
 ### Mule flow example
+Full example is available in [hystrix-test](../hystrix/test) project.
 ```xml
    <http:listener-config name="HTTP_Listener_Configuration"
       host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration" />
