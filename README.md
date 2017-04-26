@@ -32,7 +32,7 @@ The implementation allows running Mule processors using Hystrix managed thread p
 Processors to be wired with Hystrix-managed connection pools, need to be placed into their own flows and invoked using `flow-ref`. These separate flows need to be wired with custom processing strategy `org.mule.hystrix.processing.HystrixProcessingStrategy`. The strategy needs to be initialised using 2 properties: `hystrixCommandKey` and `hystrixCommandGroupKey` and can also be controlled through [Hystrix properties](https://github.com/Netflix/Hystrix/wiki/Configuration) added to the property files. Note, that exceptions are thrown wrapped in `com.netflix.hystrix.exception.HystrixRuntimeException` and require further unpicking to determine the rootcause. The fallBack procedures are implemented through Mule exception handling and can allow custom configuration of fallBack responses for timeouts, bad requests, errors, etc.
 
 ### Mule flow example
-Full example is available in [hystrix-test](../hystrix/test) project.
+Full example is available in [hystrix-test](hystrix-test) project.
 ```xml
    <http:listener-config name="HTTP_Listener_Configuration"
       host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration" />
@@ -104,7 +104,7 @@ This is useful in scenarios, like deploying to CloudHub, where it is desired to 
 ### Configuring Mule dashboard connector
 When deploying into CloudHub, the number of ports to connect to the Mule engine is limited and the same HTTP connector object can be reused to expose the end point to connect to [Hystrix dashboards](https://github.com/Netflix/Hystrix/wiki/Dashboard). Additional flow can expose JAX-RS based implementation to serve statistics using the same HTTP connector object. ___Note:___ Current implementation reverses the connection to effectively polling due to the lack of support for `text/event-stream` responses.
 
-### Mule flow example
+### Mule dashboard connector - flow example
 ```xml
 <flow name="hystrix-metricsMainFlow" processingStrategy="synchronous">
    <http:listener config-ref="HTTP_Listener_Configuration"
