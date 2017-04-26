@@ -98,7 +98,7 @@ Full example is available in [hystrix-test](hystrix-test) project.
    </choice-exception-strategy>
 ```
 
-### Config file example
+### mule-app.properties file example
 ```properties
 # Usual property file can be shared between Mule and Hystrix
 
@@ -115,6 +115,12 @@ hystrix.command.MaxTheMule.requestCache.enabled=false
 
 #hystrix.threadpool.MuleGroup.metrics.rollingStats.timeInMilliseconds=11000
 #hystrix.command.HystrixRequestCommand.metrics.rollingStats.timeInMilliseconds=12000
+```
+
+### log4j.xml addition
+Requires to shut down broken pipe warnings that come from lack of proper support (yet) of server side events streaming.
+```xml
+<AsyncLogger name="org.mule.module.http.internal.listener.grizzly" level="NONE"/>
 ```
 
 ## Dashboard connection using shared HTTP configuration
