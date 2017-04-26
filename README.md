@@ -98,6 +98,25 @@ Full example is available in [hystrix-test](hystrix-test) project.
    </choice-exception-strategy>
 ```
 
+### Config file example
+```properties
+# Usual property file can be shared between Mule and Hystrix
+
+# Command keys identify individual Mule processing strategies
+hystrix.command.key1=MaxTheMule1
+hystrix.command.key2=MaxTheMule2
+
+# Command group keys identify common thread pools used by different processing strategies
+hystrix.command.group.key=MuleGroup
+
+# See Hystrix Wiki for parameters description
+hystrix.command.MaxTheMule.execution.isolation.thread.timeoutInMilliseconds=700
+hystrix.command.MaxTheMule.requestCache.enabled=false
+
+#hystrix.threadpool.MuleGroup.metrics.rollingStats.timeInMilliseconds=11000
+#hystrix.command.HystrixRequestCommand.metrics.rollingStats.timeInMilliseconds=12000
+```
+
 ## Dashboard connection using shared HTTP configuration
 This is useful in scenarios, like deploying to CloudHub, where it is desired to reuse the existing HTTP configuration. Hystrix dashboard connection will be exposed on the same HTTP endpoint.
 
