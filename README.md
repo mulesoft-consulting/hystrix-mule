@@ -34,6 +34,7 @@ Processors to be wired with Hystrix-managed connection pools, need to be placed 
 ### Mule flow example
 Full example is available in [hystrix-test](hystrix-test) project.
 ```xml
+<flow>
    <http:listener-config name="HTTP_Listener_Configuration"
       host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration" />
    <http:request-config name="HTTP_Request_Configuration"
@@ -75,7 +76,7 @@ Full example is available in [hystrix-test](hystrix-test) project.
          doc:name="Copy_of_HTTP" />
       <exception-strategy ref="Choice"
          doc:name="Copy_of_Reference Exception Strategy" />
-   </flow>
+</flow>
    
    <!-- Exceptions thrown in flows are wrapped in com.netflix.hystrix.exception.HystrixRuntimeException
    Refer to Hystrix Wiki for more info -->
@@ -96,6 +97,7 @@ Full example is available in [hystrix-test](hystrix-test) project.
             doc:name="Property" />
       </catch-exception-strategy>
    </choice-exception-strategy>
+   </flow>
 ```
 
 ### mule-app.properties file example
