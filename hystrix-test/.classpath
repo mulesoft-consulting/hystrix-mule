@@ -8,18 +8,70 @@
   <classpathentry kind="output" path="target/classes"/>
   <classpathentry kind="con" path="MULE_RUNTIME"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-  <classpathentry kind="var" path="M2_REPO/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1.jar" sourcepath="M2_REPO/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar" sourcepath="M2_REPO/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9.jar" sourcepath="M2_REPO/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/netflix/hystrix/hystrix-core/1.5.11/hystrix-core-1.5.11.jar" sourcepath="M2_REPO/com/netflix/hystrix/hystrix-core/1.5.11/hystrix-core-1.5.11-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/netflix/hystrix/hystrix-metrics-event-stream-jaxrs/1.5.11/hystrix-metrics-event-stream-jaxrs-1.5.11.jar" sourcepath="M2_REPO/com/netflix/hystrix/hystrix-metrics-event-stream-jaxrs/1.5.11/hystrix-metrics-event-stream-jaxrs-1.5.11-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/netflix/hystrix/hystrix-serialization/1.5.11/hystrix-serialization-1.5.11.jar" sourcepath="M2_REPO/com/netflix/hystrix/hystrix-serialization/1.5.11/hystrix-serialization-1.5.11-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.7.5/jackson-annotations-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.7.5/jackson-annotations-2.7.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/module/jackson-module-afterburner/2.7.5/jackson-module-afterburner-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/module/jackson-module-afterburner/2.7.5/jackson-module-afterburner-2.7.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/mulesoft/consulting/mule-hystrix/1.0.0/mule-hystrix-1.0.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/io/reactivex/rxjava/1.2.0/rxjava-1.2.0.jar" sourcepath="M2_REPO/io/reactivex/rxjava/1.2.0/rxjava-1.2.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1.jar" sourcepath="M2_REPO/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/netflix/archaius/archaius-core/0.4.1/archaius-core-0.4.1-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar" sourcepath="M2_REPO/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/commons-configuration/commons-configuration/1.8/commons-configuration-1.8-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9.jar" sourcepath="M2_REPO/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/netflix/hystrix/hystrix-core/1.5.11/hystrix-core-1.5.11.jar" sourcepath="M2_REPO/com/netflix/hystrix/hystrix-core/1.5.11/hystrix-core-1.5.11-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/netflix/hystrix/hystrix-core/1.5.11/hystrix-core-1.5.11-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/netflix/hystrix/hystrix-metrics-event-stream-jaxrs/1.5.11/hystrix-metrics-event-stream-jaxrs-1.5.11.jar" sourcepath="M2_REPO/com/netflix/hystrix/hystrix-metrics-event-stream-jaxrs/1.5.11/hystrix-metrics-event-stream-jaxrs-1.5.11-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/netflix/hystrix/hystrix-metrics-event-stream-jaxrs/1.5.11/hystrix-metrics-event-stream-jaxrs-1.5.11-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/netflix/hystrix/hystrix-serialization/1.5.11/hystrix-serialization-1.5.11.jar" sourcepath="M2_REPO/com/netflix/hystrix/hystrix-serialization/1.5.11/hystrix-serialization-1.5.11-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/netflix/hystrix/hystrix-serialization/1.5.11/hystrix-serialization-1.5.11-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.7.5/jackson-annotations-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.7.5/jackson-annotations-2.7.5-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.7.5/jackson-annotations-2.7.5-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/module/jackson-module-afterburner/2.7.5/jackson-module-afterburner-2.7.5.jar" sourcepath="M2_REPO/com/fasterxml/jackson/module/jackson-module-afterburner/2.7.5/jackson-module-afterburner-2.7.5-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/com/fasterxml/jackson/module/jackson-module-afterburner/2.7.5/jackson-module-afterburner-2.7.5-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/mulesoft/consulting/mule-hystrix/1.0.0/mule-hystrix-1.0.0.jar" sourcepath="M2_REPO/com/mulesoft/consulting/mule-hystrix/1.0.0/mule-hystrix-1.0.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/io/reactivex/rxjava/1.2.0/rxjava-1.2.0.jar" sourcepath="M2_REPO/io/reactivex/rxjava/1.2.0/rxjava-1.2.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/michaelhyatt/.m2/repository/io/reactivex/rxjava/1.2.0/rxjava-1.2.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
 </classpath>
