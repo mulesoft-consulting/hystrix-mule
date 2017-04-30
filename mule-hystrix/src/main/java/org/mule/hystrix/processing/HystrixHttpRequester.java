@@ -28,7 +28,8 @@ public class HystrixHttpRequester extends DefaultHttpRequester {
 	private String hystrixCommandGroupKey;
 	private String hystrixCommandKey;
 
-	public HystrixHttpRequester(DefaultHttpRequester processor, String hystrixCommandGroupKey, String hystrixCommandKey) {
+	public HystrixHttpRequester(DefaultHttpRequester processor, String hystrixCommandGroupKey,
+			String hystrixCommandKey) {
 		this.processor = processor;
 		this.hystrixCommandGroupKey = hystrixCommandGroupKey;
 		this.hystrixCommandKey = hystrixCommandKey;
@@ -36,7 +37,8 @@ public class HystrixHttpRequester extends DefaultHttpRequester {
 
 	@Override
 	public MuleEvent process(MuleEvent event) throws MuleException {
-		// Injection of Hystrix sync call wrapping the original process() method.
+		// Injection of Hystrix sync call wrapping the original process()
+		// method.
 		return new HystrixRequestCommand(processor, event, hystrixCommandGroupKey, hystrixCommandKey).execute();
 	}
 
