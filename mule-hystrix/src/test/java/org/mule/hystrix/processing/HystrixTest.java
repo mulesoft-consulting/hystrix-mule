@@ -1,3 +1,4 @@
+package org.mule.hystrix.processing;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doThrow;
@@ -14,7 +15,7 @@ import org.mule.transport.http.components.ResourceNotFoundException;
 
 import com.netflix.hystrix.exception.HystrixRuntimeException;
 
-public class HystrixTests {
+public class HystrixTest {
 
 	@Before
 	public void setUp() throws Exception {
